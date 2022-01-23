@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems; 
+using Photon.Pun;
 
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rigidBody;
-
     private PlayerInput playerInput;
     private InputAction movement;
     private Vector2 moveDirection;
+    private PhotonView view;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
+        view = GetComponent<PhotonView>();
     }
     private void OnEnable()
     {
@@ -38,7 +40,11 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveDirection = movement.ReadValue<Vector2>();
-        rigidBody.velocity = new Vector3(moveDirection.x * 5.0f, 0,  moveDirection.y * 5.0f);
+        if(view.IsMine)
+        {
+            moveDirection = movement.ReadValue<Vector2>();
+            rigidBody.velocity = new Vector3(moveDirection.x * 5.0f, 0,  moveDirection.y * 5.0f);
+        }
+        
     }
 }
