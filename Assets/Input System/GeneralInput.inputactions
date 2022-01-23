@@ -1,0 +1,33 @@
+{
+    "name": "GeneralInput",
+    "maps": [
+        {
+            "name": "Quit",
+            "id": "5dd2e752-730b-4fcc-aa34-28c163604aa5",
+            "actions": [
+                {
+                    "name": "PressKey",
+                    "type": "Button",
+                    "id": "60a93534-a2a9-4577-be05-322bfa5069a2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "24d54ec5-ae5d-4dd4-b1b5-ccd1dafe4a33",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PressKey",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

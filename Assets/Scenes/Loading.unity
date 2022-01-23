@@ -374,7 +374,7 @@ PrefabInstance:
     - target: {fileID: 3497222759019333175, guid: aaca380e61c4a824f82a435528ae4f79,
         type: 3}
       propertyPath: m_Text
-      value: 'Laoding '
+      value: 'Loading '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaca380e61c4a824f82a435528ae4f79, type: 3}
