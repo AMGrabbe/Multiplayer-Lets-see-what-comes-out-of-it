@@ -29,9 +29,4 @@ public class QuitManager : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
-
-    private void FixedUpdate()
-    {
-
-    }
 }

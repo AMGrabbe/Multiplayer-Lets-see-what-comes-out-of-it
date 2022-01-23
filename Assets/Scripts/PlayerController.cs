@@ -6,32 +6,39 @@ using UnityEngine.EventSystems;
 
 public class PlayerController : MonoBehaviour
 {
+    private Rigidbody rigidBody;
 
-    public Rigidbody rigidBody;
-    public InputAction playerControls;
+    private PlayerInput playerInput;
+    private InputAction movement;
     private Vector2 moveDirection;
 
+    private void Awake()
+    {
+        playerInput = new PlayerInput();
+    }
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
     }
     private void OnEnable()
     {
-        playerControls.Enable();
+        movement = playerInput.Player.Movement; 
+        playerInput.Enable();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        playerInput.Disable();
     }
 
-    void Update()
+  /*  void Update()
     {
       moveDirection = playerControls.ReadValue<Vector2>();
-    }
+    }*/
 
     private void FixedUpdate()
     {
+        moveDirection = movement.ReadValue<Vector2>();
         rigidBody.velocity = new Vector3(moveDirection.x * 5.0f, 0,  moveDirection.y * 5.0f);
     }
 }
